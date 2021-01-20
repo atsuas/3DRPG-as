@@ -7,16 +7,13 @@ public class Sample : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string s = "あつ";
-        string myName = "atsu";
-        Debug.Log(s);
-        Debug.Log(myName);
-        
+        int n = 10;
+        float f = 4.2f;
+        bool h = true;
+
+        Debug.Log(n);
+        Debug.Log(f);
+        Debug.Log(h);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
