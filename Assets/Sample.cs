@@ -8,11 +8,16 @@ public class Sample : MonoBehaviour
     void Start()
     {
         int n = 10;
+        int m = -2;
 
-        n = n + 1;
-        n += 1;
-        n++;
-        Debug.Log(n);
+        Debug.Log(n == m);
+        Debug.Log(n > m);
+        Debug.Log(n >= m);
+        Debug.Log(n < m);
+        Debug.Log(n <= m);
+        Debug.Log(n != m);
+
+
     }
 
 }
