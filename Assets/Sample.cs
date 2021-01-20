@@ -9,14 +9,11 @@ public class Sample : MonoBehaviour
     {
         int n = 10;
         int m = -2;
+        int l = 3;
 
-        Debug.Log(n == m);
-        Debug.Log(n > m);
-        Debug.Log(n >= m);
-        Debug.Log(n < m);
-        Debug.Log(n <= m);
-        Debug.Log(n != m);
-
+        Debug.Log(n > m && m < l);
+        Debug.Log(n > m && m > l);
+        Debug.Log(n > m || m > l);
 
     }
 
