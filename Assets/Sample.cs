@@ -1,20 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Sample : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // 名前：スタジオしまづ
+    // 身長：163.0cm
+    // 体重：44.5kg
+    // 誕生日：5月7日
+    string myName = "スタジオしまづ";
+    float height = 163.0f;
+    int weight = 45;
+    int monthOfbirth = 5;
+    int dayOfbirth = 7;
+
     void Start()
     {
-        int n = 10;
-        int m = -2;
-        int l = 3;
-
-        Debug.Log(n > m && m < l);
-        Debug.Log(n > m && m > l);
-        Debug.Log(n > m || m > l);
-
+        Debug.Log("名前：" + myName);
+        Debug.Log("身長：" + height);
+        Debug.Log("体重：" + weight);
+        Debug.Log("誕生日：" + monthOfbirth + "月" + dayOfbirth + "日");
     }
-
 }
