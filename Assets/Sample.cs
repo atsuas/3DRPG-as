@@ -8,12 +8,13 @@ public class Sample : MonoBehaviour
     void Start()
     {
         int n = 10;
-        float f = 4.2f;
-        bool h = true;
+        int m = 2;
 
-        Debug.Log(n);
-        Debug.Log(f);
-        Debug.Log(h);
+        Debug.Log(n + m);
+        Debug.Log(n - m);
+        Debug.Log(n * m);
+        Debug.Log(n / m);
+
     }
 
 }
