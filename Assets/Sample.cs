@@ -8,17 +8,11 @@ public class Sample : MonoBehaviour
     void Start()
     {
         int n = 10;
-        int m = 3;
-        string a = "あつ";
-        string b = "koko";
 
-        string c = "10";
-        string d = "2";
-
-        Debug.Log(n % m);
-        Debug.Log(a + b);
-        Debug.Log(c + d);
-
+        n = n + 1;
+        n += 1;
+        n++;
+        Debug.Log(n);
     }
 
 }
