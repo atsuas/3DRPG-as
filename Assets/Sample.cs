@@ -2,21 +2,12 @@
 
 public class Sample : MonoBehaviour
 {
-    // 名前：スタジオしまづ
-    // 身長：163.0cm
-    // 体重：44.5kg
-    // 誕生日：5月7日
-    string myName = "スタジオしまづ";
-    float height = 163.0f;
-    int weight = 45;
-    int monthOfbirth = 5;
-    int dayOfbirth = 7;
-
+    // 123かける456割る2の計算結果をコンソールに表示したい
     void Start()
     {
-        Debug.Log("名前：" + myName);
-        Debug.Log("身長：" + height);
-        Debug.Log("体重：" + weight);
-        Debug.Log("誕生日：" + monthOfbirth + "月" + dayOfbirth + "日");
+        int n = 123;
+        int m = 456;
+
+        Debug.Log(n * m / 2);
     }
 }
