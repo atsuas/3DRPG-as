@@ -16,6 +16,6 @@ public class Sample : MonoBehaviour
     void Start()
     {
         direction = DIRECTION.LEFT;
-        Debug.Log(direction);
+        Debug.Log((int)direction);  //intを付けると配列の数値が返ってくる
     }
 }
