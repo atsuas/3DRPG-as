@@ -2,19 +2,22 @@
 
 public class Sample : MonoBehaviour
 {
-    // 123かける456割る2の計算結果をコンソールに表示したい
+    
     void Start()
     {
-        int hp = 100;
+        int n = 3;
 
-        if (hp <= 0)
+        if (n > 10)
         {
-            hp = 0;
-            Debug.Log("戦闘不能");
+            Debug.Log("nは10より大きい");
+        }
+        else if (n > 0)
+        {
+            Debug.Log("nは0より大きい");
         }
         else
         {
-            Debug.Log("生きている！");
+            Debug.Log("その他");
         }
     }
 }
