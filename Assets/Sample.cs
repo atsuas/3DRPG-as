@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 
-public class Sample : MonoBehaviour
+public class Question : MonoBehaviour
 {
-    int count = 10;
+    int n = 1000;
 
     void Start()
     {
-       while (count <= 1000)
+        while (n <= 2000)
         {
-            Debug.Log(count);
-            count = count + 1;
+            Debug.Log(n);
+            if (n % 273 == 0)
+            {
+                break;
+            }
+            n++;
         }
     }
 }
