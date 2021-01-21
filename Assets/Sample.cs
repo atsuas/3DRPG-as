@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Sample : MonoBehaviour
+public class Question : MonoBehaviour
 {
     int hp = 100;
     void Start()
@@ -8,6 +8,10 @@ public class Sample : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("戦闘不能");
+        }
+        else
+        {
+            Debug.Log("元気");
         }
     }
 }
