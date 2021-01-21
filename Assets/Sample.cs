@@ -4,14 +4,13 @@ public class Question : MonoBehaviour
 {
     void Start()
     {
-        for (int i = 1000; i <= 2000; i++)
+        for (int i = 0; i <= 100; i++)
         {
-            Debug.Log(i);
-
-            if (i % 273 == 0)
+            if (i % 3 == 0)
             {
-                break;
+                continue;
             }
+            Debug.Log(i);
         }
     }
 }
