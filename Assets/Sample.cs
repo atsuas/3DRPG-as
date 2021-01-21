@@ -7,7 +7,13 @@ public class Sample : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-            Debug.Log("魔法攻撃");
+            if (i == 3)
+            {
+                //break; //処理を抜ける
+                continue; //一回飛ばす
+            }
+            
         }
+        Debug.Log("魔法攻撃");
     }
 }
