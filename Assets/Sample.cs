@@ -2,16 +2,19 @@
 
 public class Question : MonoBehaviour
 {
-    int hp = 100;
+    int count = 10;
+
     void Start()
     {
-        if (hp <= 0)
-        {
-            Debug.Log("戦闘不能");
-        }
-        else
-        {
-            Debug.Log("元気");
-        }
+        Debug.Log(count);
+        count = count + 1;
+        Debug.Log(count);
+        count = count + 1;
+        Debug.Log(count);
+        count = count + 1;
+        Debug.Log(count);
+        count = count + 1;
+        Debug.Log(count);
+        count = count + 1;
     }
 }
