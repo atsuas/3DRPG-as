@@ -2,18 +2,13 @@
 
 public class Question : MonoBehaviour
 {
-    int n = 1000;
+    int count = 10;
 
     void Start()
     {
-        while (n <= 2000)
+        for (int i = 10; i <= 1000; i++)
         {
-            Debug.Log(n);
-            if (n % 273 == 0)
-            {
-                break;
-            }
-            n++;
+            Debug.Log(i);
         }
     }
 }
