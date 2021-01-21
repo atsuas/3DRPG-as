@@ -4,13 +4,16 @@ using UnityEngine;
 public class Question : MonoBehaviour
 {
     List<string> nameList = new List<string> { "スタジオしまづ", "嶋津恒彦", "しまづ" };
+
     void Start()
     {
-        // コンソールに0番目を表示したい
-        Debug.Log(nameList[0]);
-        // 0番目の値を"スタジオしまづアカデミア"に変更したい
-        nameList[0] = "スタジオしまづアカデミア";
-        // コンソールに0番目を表示したい
-        Debug.Log(nameList[0]);
+        // nameListに"スタジオしまづアカデミア"を追加したい：Addってのを使う
+        nameList.Add("スタジオしまづアカデミア");
+
+        // 追加したあと、全ての値をログに表示して追加されたのを確認したい
+        for (int i = 0; i < nameList.Count; i++)
+        {
+            Debug.Log(nameList[i]);
+        }
     }
 }
