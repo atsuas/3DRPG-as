@@ -7,24 +7,24 @@ public class Question : MonoBehaviour
         UP,
         DOWN,
         RIGHT,
-        LEFT
+        LEFT,
     }
 
-    int direction = 0;
+    Direction direction = Direction.RIGHT;
     void Start()
     {
         switch (direction)
         {
-            case 0:
+            case Direction.UP:
                 Debug.Log("上");
                 break;
-            case 1:
+            case Direction.DOWN:
                 Debug.Log("下");
                 break;
-            case 2:
+            case Direction.LEFT:
                 Debug.Log("左");
                 break;
-            case 3:
+            case Direction.RIGHT:
                 Debug.Log("右");
                 break;
             default:
