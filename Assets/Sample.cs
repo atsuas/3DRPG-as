@@ -2,20 +2,23 @@
 
 public class Sample : MonoBehaviour
 {
+    int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    int[] numbers2 = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
     void Start()
     {
-        int sum = 0;
-        sum += Damage("しまづ", 100);
-        sum += Damage("しまづ", 20);
-
-        // sum = 100+20; //100とか20が変わるたびに修正しないといけないのでミスが起こりやすい
-        Debug.Log("合計のダメージは" + sum + "です");
+        for (int i = 0; i < numbers1.Length; i++)
+        {
+            Debug.Log(numbers1[i]);
+        }
+        for (int i = 0; i < numbers2.Length; i++)
+        {
+            Debug.Log(numbers2[i]);
+        }
     }
 
-    int Damage(string target, int damage)
+    void ShowArrayValueLog()
     {
-        Debug.Log(target + "は" + damage + "をうけました。");
-        return damage;
+
     }
 }
