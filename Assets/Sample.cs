@@ -2,20 +2,24 @@
 
 public class Sample : MonoBehaviour
 {
-    int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    int[] numbers2 = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    int[] numbers1 = { 2, 4, 6 };
+    int[] numbers2 = { 1, 2, 3 };
 
     void Start()
     {
-        ShowArrayValueLog(numbers1);
-        ShowArrayValueLog(numbers2);
+        Debug.Log(Mean(numbers1));
+        Debug.Log(Mean(numbers2));
     }
 
-    void ShowArrayValueLog(int[] numbers)
+    int Mean(int[] numbers)
     {
-        for (int i = 0; i < numbers.Length; i++)
+        int sum = 0;
+        int count = numbers.Length;
+        for (int i = 0; i < count; i++)
         {
-            Debug.Log(numbers[i]);
+            sum += numbers[i];
         }
+
+        return sum / count; // 合計/個数
     }
 }
