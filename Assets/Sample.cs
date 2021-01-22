@@ -2,6 +2,8 @@
 
 public class Sample : MonoBehaviour
 {
+    int x = 10;
+    int y = 2;
 
     void Start()
     {
@@ -10,6 +12,6 @@ public class Sample : MonoBehaviour
 
     void Goto()
     {
-        Debug.Log("スタジオしまづのオンラインサロンとは？");
+        Debug.Log(x + y);
     }
 }
