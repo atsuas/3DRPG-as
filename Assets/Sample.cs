@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 
-public class Sample : MonoBehaviour
+public class Question : MonoBehaviour
 {
+    int x = 10;
+    int y = 2;
+    int z = -3;
+
     void Start()
     {
-        Goto1(10, 2, -3);
+        Sample(x, y);
+        Sample(y, z);
+        Sample(z, x);
     }
 
-    void Goto1(int x, int y, int z)
+    void Sample(int a, int b)
     {
-        Debug.Log(x + y);
-        Debug.Log(y + z);
-        Debug.Log(z + x);
+        Debug.Log(a + b);
     }
 }
