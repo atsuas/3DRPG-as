@@ -2,11 +2,9 @@
 
 public class Sample : MonoBehaviour
 {
-    public Player player;
-
-    void Start()
+    
+    void Update()
     {
-        //ここでPlayerのAttack関数を実行したい
-        player.Attack();
+       
     }
 }
