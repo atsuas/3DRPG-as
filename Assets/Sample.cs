@@ -1,19 +1,15 @@
 ﻿using UnityEngine;
 
-public class Question : MonoBehaviour
+public class Sample : MonoBehaviour
 {
 
     void Start()
     {
+        Goto();
     }
 
-    void FirstFunc1()
+    void Goto()
     {
-
+        Debug.Log("スタジオしまづのオンラインサロンとは？");
     }
-
-    void FirstFunc2()
-    {
-
-}
 }
