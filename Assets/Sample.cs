@@ -7,18 +7,15 @@ public class Sample : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < numbers1.Length; i++)
-        {
-            Debug.Log(numbers1[i]);
-        }
-        for (int i = 0; i < numbers2.Length; i++)
-        {
-            Debug.Log(numbers2[i]);
-        }
+        ShowArrayValueLog(numbers1);
+        ShowArrayValueLog(numbers2);
     }
 
-    void ShowArrayValueLog()
+    void ShowArrayValueLog(int[] numbers)
     {
-
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            Debug.Log(numbers[i]);
+        }
     }
 }
