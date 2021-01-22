@@ -2,13 +2,11 @@
 
 public class Sample : MonoBehaviour
 {
-    int[] numbers1 = { 2, 4, 6 };
-    int[] numbers2 = { 1, 2, 3 };
+    int[] numbers = { 1, 1, 2, 2 };
 
     void Start()
     {
-        Debug.Log(Mean(numbers1));
-        Debug.Log(Mean(numbers2));
+        Debug.Log(Mean(numbers));
     }
 
     int Mean(int[] numbers)
@@ -19,7 +17,6 @@ public class Sample : MonoBehaviour
         {
             sum += numbers[i];
         }
-
         return sum / count; // 合計/個数
     }
 }
