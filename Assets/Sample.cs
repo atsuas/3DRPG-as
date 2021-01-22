@@ -2,16 +2,15 @@
 
 public class Sample : MonoBehaviour
 {
-    int x = 10;
-    int y = 2;
-
     void Start()
     {
-        Goto();
+        Goto1(10, 2, -3);
     }
 
-    void Goto()
+    void Goto1(int x, int y, int z)
     {
         Debug.Log(x + y);
+        Debug.Log(y + z);
+        Debug.Log(z + x);
     }
 }
