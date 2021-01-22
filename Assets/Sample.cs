@@ -10,16 +10,16 @@ public class Sample : MonoBehaviour
         //関数名();
         //SayName();
         //SayName1("あつ", 20);
-        string studioName = GetSayName1();
+        string studioName = GetSayName1("atsu", 3);
         Debug.Log(studioName);
         
     }
     //何も返さないならvoid / string型を返すので　string 関数名()
-    string GetSayName1()
+    string GetSayName1(string userName, int age)
     {
         //Debug.Log("スタジオ" + userName + age + "歳");
         //Debug.Log(userName + "スタジオ");
-        return "スタジオ atsu";
+        return "スタジオ" + userName + age + "周年";
     }
 
     //引数ありの関数の作成
