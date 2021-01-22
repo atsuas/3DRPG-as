@@ -8,9 +8,18 @@ public class Sample : MonoBehaviour
     {
         //関数の使い方
         //関数名();
-        SayName();
-        SayName1("あつ", 20);
+        //SayName();
+        //SayName1("あつ", 20);
+        string studioName = GetSayName1();
+        Debug.Log(studioName);
         
+    }
+    //何も返さないならvoid / string型を返すので　string 関数名()
+    string GetSayName1()
+    {
+        //Debug.Log("スタジオ" + userName + age + "歳");
+        //Debug.Log(userName + "スタジオ");
+        return "スタジオ atsu";
     }
 
     //引数ありの関数の作成
