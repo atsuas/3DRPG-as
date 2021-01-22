@@ -9,9 +9,9 @@ public class Sample : MonoBehaviour
         Debug.Log(Mean(numbers));
     }
 
-    int Mean(int[] numbers)
+    float Mean(int[] numbers)
     {
-        int sum = 0;
+        float sum = 0;
         int count = numbers.Length;
         for (int i = 0; i < count; i++)
         {
