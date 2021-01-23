@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeScript : MonoBehaviour
+public class CubeManager : MonoBehaviour
 {
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
+        //rb.velocity = new Vector3(1, 0, 0);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        //transform.position += new Vector3(0.1f, 0, 0);
-        //transform.Translate(new Vector3(0.1f, 0, 0));
-        transform.Rotate(new Vector3(0.1f, 0, 0));
+        rb.AddForce(new Vector3(1, 0, 0));
     }
 }
