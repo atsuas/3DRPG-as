@@ -13,6 +13,8 @@ public class CubeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //transform.position += new Vector3(0.1f, 0, 0);
+        //transform.Translate(new Vector3(0.1f, 0, 0));
+        transform.Rotate(new Vector3(0.1f, 0, 0));
     }
 }
