@@ -25,5 +25,11 @@ public class ArthurManager : MonoBehaviour
         {
             animator.SetFloat("MoveSpeed", 0);
         }
+
+    }
+
+    public void HitLog()
+    {
+        Debug.Log("Hit!!!");
     }
 }
