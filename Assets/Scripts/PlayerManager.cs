@@ -24,6 +24,12 @@ public class PlayerManager : MonoBehaviour
         // キーボード入力で移動させる
         x =  Input.GetAxisRaw("Horizontal");
         z = Input.GetAxisRaw("Vertical");
+
+        //攻撃入力
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Attack");
+        }
     }
 
     private void FixedUpdate()
