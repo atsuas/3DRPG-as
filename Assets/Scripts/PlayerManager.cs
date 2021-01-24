@@ -28,6 +28,8 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 direction = transform.position + new Vector3(x, 0, z) * moveSpeed;
+        transform.LookAt(direction);
         //　速度設定
         rb.velocity = new Vector3(x, 0, z) * moveSpeed;
         animator.SetFloat("Speed", rb.velocity.magnitude);
