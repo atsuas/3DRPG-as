@@ -9,11 +9,13 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed = 2;
 
     Rigidbody rb;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,5 +30,6 @@ public class PlayerManager : MonoBehaviour
     {
         //　速度設定
         rb.velocity = new Vector3(x, 0, z) * moveSpeed;
+        animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 }
