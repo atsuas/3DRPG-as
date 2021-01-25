@@ -47,7 +47,7 @@ public class PlayerManager : MonoBehaviour
         if (damager != null)
         {
             //ダメージを与えるものにぶつかったら
-            Debug.Log("Playerはダメージをうける");
+            animator.SetTrigger("Hurt");
         }
     }
 }
