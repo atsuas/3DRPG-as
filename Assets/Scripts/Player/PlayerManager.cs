@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
     float z;
     public float moveSpeed;
     public Collider weaponCollider;
+    public PlayerUIManager playerUIManager;
+    public int maxHp = 100;
+    public int hp;
 
     Rigidbody rb;
     Animator animator;
@@ -15,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hp = maxHp;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         HideColliderWeapon();
@@ -53,6 +57,17 @@ public class PlayerManager : MonoBehaviour
         weaponCollider.enabled = true;
     }
 
+    void Damage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            hp = 0;
+        }
+        playerUIManager.UpdateHP(hp);
+        Debug.Log("Player残りHP:" + hp);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Damager damager = other.GetComponent<Damager>();
@@ -60,6 +75,7 @@ public class PlayerManager : MonoBehaviour
         {
             //ダメージを与えるものにぶつかったら
             animator.SetTrigger("Hurt");
+            Damage(damager.damage);
         }
     }
 }

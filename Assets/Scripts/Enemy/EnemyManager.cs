@@ -9,10 +9,13 @@ public class EnemyManager : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
     public Collider weaponCollider;
+    public int maxHp = 100;
+    public int hp;
 
 
     void Start()
     {
+        hp = maxHp;
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = target.position;
@@ -35,6 +38,16 @@ public class EnemyManager : MonoBehaviour
         weaponCollider.enabled = true;
     }
 
+    void Damage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            hp = 0;
+        }
+        Debug.Log("Enemy残りHP:" + hp);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Damager damager = other.GetComponent<Damager>();
@@ -42,6 +55,7 @@ public class EnemyManager : MonoBehaviour
         {
             //ダメージを与えるものにぶつかったら
             animator.SetTrigger("Hurt");
+            Damage(damager.damage);
         }
     }
 }
