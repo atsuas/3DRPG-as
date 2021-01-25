@@ -40,4 +40,9 @@ public class PlayerManager : MonoBehaviour
         rb.velocity = new Vector3(x, 0, z) * moveSpeed;
         animator.SetFloat("Speed", rb.velocity.magnitude);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("ぶつかったよ(Player)");
+    }
 }
