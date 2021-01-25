@@ -9,13 +9,15 @@ public class EnemyManager : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
     public Collider weaponCollider;
-    public int maxHp = 100;
+    public EnemyUImanager enemyUImanager;
+    public int maxHp = 300;
     public int hp;
 
 
     void Start()
     {
         hp = maxHp;
+        enemyUImanager.Init(this);
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.destination = target.position;
@@ -45,6 +47,7 @@ public class EnemyManager : MonoBehaviour
         {
             hp = 0;
         }
+        enemyUImanager.UpdateHP(hp);
         Debug.Log("Enemy残りHP:" + hp);
     }
 

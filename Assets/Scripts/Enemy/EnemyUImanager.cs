@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyUImanager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Slider hpSlider;
+
+    public void Init(EnemyManager enemyManager)
     {
-        
+        hpSlider.maxValue = enemyManager.maxHp;
+        hpSlider.value = enemyManager.maxHp;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHP(int hp)
     {
-        
+        hpSlider.value = hp;
     }
 }

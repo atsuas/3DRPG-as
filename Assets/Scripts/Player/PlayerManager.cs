@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         hp = maxHp;
+        playerUIManager.Init(this);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         HideColliderWeapon();
