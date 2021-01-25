@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
         if (damager != null)
         {
             //ダメージを与えるものにぶつかったら
-            Debug.Log("敵はダメージをうける");
+            animator.SetTrigger("Hurt");
         }
     }
 }
