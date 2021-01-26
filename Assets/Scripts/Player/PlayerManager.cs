@@ -12,7 +12,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverText;
     public Transform target;
     public int maxHp = 100;
+    public int maxStamina = 100;
     int hp;
+    int stamina;
     bool isDie;
 
     Rigidbody rb;
@@ -22,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         hp = maxHp;
+        stamina = maxStamina;
         playerUIManager.Init(this);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -42,6 +45,27 @@ public class PlayerManager : MonoBehaviour
         //攻撃入力
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Attack();
+        }
+        IncreaseStamina();
+    }
+
+    void IncreaseStamina()
+    {
+        stamina++;
+        if (stamina >= maxStamina)
+        {
+            stamina = maxStamina;
+        }
+        playerUIManager.UpdateStamina(stamina);
+    }
+
+    void Attack()
+    {
+        if (stamina >= 40)
+        {
+            stamina -= 40;
+            playerUIManager.UpdateStamina(stamina);
             LookAtTarget();
             animator.SetTrigger("Attack");
         }
