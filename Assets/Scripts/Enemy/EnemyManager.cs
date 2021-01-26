@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
     Animator animator;
     public Collider weaponCollider;
     public EnemyUImanager enemyUImanager;
+    public GameObject gameClearText;
     public int maxHp = 300;
     int hp;
 
@@ -48,6 +49,7 @@ public class EnemyManager : MonoBehaviour
             hp = 0;
             animator.SetTrigger("Die");
             Destroy(gameObject, 3f);
+            gameClearText.SetActive(true);
         }
         enemyUImanager.UpdateHP(hp);
         Debug.Log("Enemy残りHP:" + hp);
