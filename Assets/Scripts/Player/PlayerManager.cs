@@ -8,6 +8,11 @@ public class PlayerManager : MonoBehaviour
     float z;
     public float moveSpeed;
     public Collider weaponCollider;
+    public PlayerUIManager playerUIManager;
+    public GameObject gameOverText;
+    public int maxHp = 100;
+    int hp;
+    bool isDie;
 
     Rigidbody rb;
     Animator animator;
@@ -15,6 +20,8 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hp = maxHp;
+        playerUIManager.Init(this);
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         HideColliderWeapon();
@@ -23,6 +30,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDie)
+        {
+            return;
+        }
         // キーボード入力で移動させる
         x =  Input.GetAxisRaw("Horizontal");
         z = Input.GetAxisRaw("Vertical");
@@ -36,6 +47,10 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDie)
+        {
+            return;
+        }
         Vector3 direction = transform.position + new Vector3(x, 0, z) * moveSpeed;
         transform.LookAt(direction);
         //　速度設定
@@ -53,13 +68,33 @@ public class PlayerManager : MonoBehaviour
         weaponCollider.enabled = true;
     }
 
+    void Damage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            hp = 0;
+            isDie = true;
+            animator.SetTrigger("Die");
+            gameOverText.SetActive(true);
+        }
+        playerUIManager.UpdateHP(hp);
+        Debug.Log("Player残りHP:" + hp);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (isDie)
+        {
+            return;
+        }
+
         Damager damager = other.GetComponent<Damager>();
         if (damager != null)
         {
             //ダメージを与えるものにぶつかったら
             animator.SetTrigger("Hurt");
+            Damage(damager.damage);
         }
     }
 }
