@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     public float moveSpeed;
     public Collider weaponCollider;
     public PlayerUIManager playerUIManager;
-    public int maxHp = 10;
+    public int maxHp = 100;
     int hp;
     bool isDie;
 
